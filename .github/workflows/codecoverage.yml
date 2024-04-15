@@ -30,9 +30,9 @@ jobs:
 
       - name: Build project
         run: |
-          yarn add
+          yarn install
           yarn global add jest
-          npm install -g jest
+          # npm install -g jest
           # npm i -g @nestjs/cli
           # nest update
       - name: Test project
