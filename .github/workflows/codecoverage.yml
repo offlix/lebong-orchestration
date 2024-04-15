@@ -44,7 +44,7 @@ jobs:
           set -e
       - name: Install Codacy-Coverage Tools
         run: |
-          npm install codacy-coverage --save
+          yarn add codacy-coverage --save
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
