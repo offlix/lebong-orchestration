@@ -1,15 +1,8 @@
 #!/bin/bash
-
-# Function to check if Docker is installed or not
-is_docker_installed() {
-    if ! command -v docker >/dev/null 2>&1; then
-        echo "Docker is not installed."
-        return 0
-    else
-        echo "Docker is installed."
-        return 1
-    fi
+check_echo(){
+    brew update
 }
+<<<<<<< HEAD
 
 initialize_docker() {
     if is_docker_installed; then
@@ -249,3 +242,6 @@ fi
 
 # Run the specified function
 "$@"
+=======
+check_echo
+>>>>>>> 51799e5 (added listener, added bullq)
