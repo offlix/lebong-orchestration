@@ -1,16 +1,5 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
 import { SystemService } from './system.service';
-import { exec } from 'child_process';
-import { promisify } from 'util';
-import { CreateSystemDto } from './dto/create-system.dto';
 
 @Controller('system')
 export class SystemController {
