@@ -10,7 +10,6 @@ is_docker_installed() {
         return 1
     fi
 }
-<<<<<<< HEAD
 
 initialize_docker() {
     if is_docker_installed; then
@@ -27,10 +26,10 @@ initialize_docker() {
         # Verify the installation
         echo "Docker has been installed successfully."
         docker --version
-        
+
     else
         echo "Docker is already installed hence skipping the installation."
-        
+
     fi
 }
 
@@ -250,6 +249,3 @@ fi
 
 # Run the specified function
 "$@"
-=======
-check_echo
->>>>>>> 51799e5 (added listener, added bullq)
