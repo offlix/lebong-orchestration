@@ -23,7 +23,9 @@ export class SystemConsumer {
       if (stderr) {
         throw new Error(`Error executing sudo update: ${stderr}`);
       }
-      this.eventEmitter.emit(UpdateEvents.UPDATE_COMPLETED, { stdout });
+      if (job.isCompleted) {
+        this.eventEmitter.emit(UpdateEvents.UPDATE_COMPLETED, { stdout });
+      }
     } catch (error) {
       this.logger.error(error.message);
       throw error;

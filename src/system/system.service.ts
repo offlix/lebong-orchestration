@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import { SystemStdOptionsInterface } from './interface/system.command.interface';
-import { SystemResponseInterface } from './interface/system.response.interface';
 import { InjectQueue } from '@nestjs/bull';
 import { DOCKER_INSTALL, SYSTEM_QUEUE } from '../utils/constant';
 import { Queue } from 'bull';
