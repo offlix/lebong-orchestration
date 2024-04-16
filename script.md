@@ -14,6 +14,7 @@ Arguments: None
 Description: Checks if Docker is installed on the system.
 Output:
 Prints a message indicating whether Docker is installed or not.
+
 Returns 1 if Docker is installed, 0 otherswise.
 
 ### initialize_docker
