@@ -26,10 +26,10 @@ initialize_docker() {
         # Verify the installation
         echo "Docker has been installed successfully."
         docker --version
-
+        
     else
         echo "Docker is already installed hence skipping the installation."
-
+        
     fi
 }
 
