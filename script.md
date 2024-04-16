@@ -1,7 +1,8 @@
 # Docker Management Script Documentation
+
 This document provides a comprehensive overview of the functions available in the script and their required arguments.
 
-Prerequisites:
+## Prerequisites:
 
 The script assumes you are running a bash shell environment.
 Some functions require root privileges for installation purposes. Use sudo accordingly.
@@ -13,7 +14,8 @@ Arguments: None
 Description: Checks if Docker is installed on the system.
 Output:
 Prints a message indicating whether Docker is installed or not.
-Returns 1 if Docker is installed, 0 otherwise.
+
+Returns 1 if Docker is installed, 0 otherswise.
 
 ### initialize_docker
 
