@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { CreateSystemDto } from './dto/create-system.dto';
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { SystemStdOptionsInterface } from './interface/system.command.interface';
 const execAsync = promisify(exec);
 @Injectable()
 export class SystemService {
-  async ls(system: CreateSystemDto): Promise<string[]> {
+  async ls(): Promise<string[]> {
     try {
-      const { stdout, stderr } = await execAsync(system.command);
+      const { stdout, stderr } = await this.executeSystemProcess('ls');
       if (stderr) {
         throw new Error(stderr);
       }
@@ -16,5 +16,11 @@ export class SystemService {
     } catch (error) {
       throw new Error(error);
     }
+  }
+
+  private async executeSystemProcess(
+    command: string,
+  ): Promise<SystemStdOptionsInterface> {
+    return await execAsync(command);
   }
 }

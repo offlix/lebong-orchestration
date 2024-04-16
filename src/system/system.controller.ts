@@ -5,7 +5,7 @@ import { SystemService } from './system.service';
 export class SystemController {
   constructor(private readonly systemService: SystemService) {}
   @Post('ls')
-  async getLS(@Body() CreateSystemDto) {
-    return this.systemService.ls(CreateSystemDto);
+  async getLS() {
+    return this.systemService.ls();
   }
 }
