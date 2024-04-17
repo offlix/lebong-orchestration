@@ -1,13 +1,14 @@
 // some-listener.service.ts
 import { Injectable, Logger } from '@nestjs/common';
-import { OnEvent } from '@nestjs/event-emitter';
+import { EventEmitter2, OnEvent } from '@nestjs/event-emitter';
 import { UpdateEvents } from '../enums/update.event';
 
 @Injectable()
 export class SystemListenerService {
+  constructor(private readonly eventEmitter: EventEmitter2) {}
   private readonly logger = new Logger(SystemListenerService.name);
   @OnEvent(UpdateEvents.UPDATE_COMPLETED)
   handleUpdateCompleted(payload: { stdout: string }) {
-    this.logger.log('boom! Update completed 🥳. Output:', payload.stdout);
+    this.logger.log('boom! Update completed 🥳', payload.stdout);
   }
 }

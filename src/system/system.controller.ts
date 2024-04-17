@@ -4,7 +4,7 @@ import { SystemService } from './system.service';
 @Controller('system')
 export class SystemController {
   constructor(private readonly systemService: SystemService) {}
-  @Post('configure-docker')
+  @Post('list-docker-containers')
   async test_bash() {
     try {
       const response = await this.systemService.configure_docker();
