@@ -16,6 +16,7 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
       useFactory: async (configService: ConfigService) => ({
         redis: {
           host: configService.get('REDIS_HOST'),
+          // host: configService.get('REDIS_HOST'),
           port: configService.get('REDIS_PORT'),
         },
       }),
@@ -23,6 +24,9 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
     }),
     BullModule.registerQueue({
       name: SYSTEM_QUEUE,
+      defaultJobOptions: {
+        removeOnComplete: true,
+      },
     }),
   ],
   controllers: [SystemController],
